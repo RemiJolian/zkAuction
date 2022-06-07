@@ -7,3 +7,5 @@ ZKAuction is a zero knowledge based blind auction that keeps the privacy of the 
 ## TODO
 
 ## Circuit
+
+## UI

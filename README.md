@@ -1,6 +1,5 @@
 # zkAuction
 
-[On going work, a placeholder to start working on the cirtuit and the UI]
 
 ## Proposal Overview
 
@@ -9,5 +8,9 @@ ZKAuction is a zero knowledge based blind auction that keeps the privacy of the 
 ## TODO
 
 ## Circuit
+
+Circuit for the BlindAuction:
+https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/auction.circom
+
 
 ## UI

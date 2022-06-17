@@ -37,3 +37,8 @@ https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/auction.cir
 
 
 ## UI
+
+
+## TODO
+ -  Encrypt the price in the Auction.sol
+ -  

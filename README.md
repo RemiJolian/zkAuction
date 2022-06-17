@@ -26,6 +26,8 @@ struct Auction {
     bool active;
     Bid[] bids;
 }
+
+mapping(uint256 => Auction) public auctions;
 ```
 
 Link to the `Auction.sol` contract [here](https://github.com/RemiJolian/zkAuction/blob/main/contracts/Auction.sol).

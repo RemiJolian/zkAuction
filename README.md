@@ -22,7 +22,8 @@ In this desing, there is no need for the auctioneer to generate the proof and ru
 
 ## Smart contract
 
-The `Auction.sol` contract used to store auction information on chain. The `Auction` struct stores auction name, expiration date, and also takes array of struct `Bid` to store the encrypted price and the secret.
+The `Auction.sol` contract inherits `SemaphoreCore` contract and uses Semaphore as ID authentication. It also used to store auction information on chain. The `Auction` struct stores auction name, expiration date, and also takes array of struct `Bid` to store the encrypted price and the secret.
+Any interaction with the smart contract, e.g. `addBid`, requires to verify proof and then call `_saveNullifierHash`. 
 
 ```javascript
 struct Bid {

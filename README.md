@@ -51,6 +51,8 @@ https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/auction.cir
 
 ## UI
 
+This system uses reactjs to interact with smart contract. 
+
 
 ## TODO
  -  Encrypt the price in the Auction.sol

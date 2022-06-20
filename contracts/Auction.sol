@@ -1,9 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-contract Auction {
+import "@semaphore-protocol/contracts/interfaces/IVerifier.sol";
+import "@semaphore-protocol/contracts/base/SemaphoreCore.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+
+contract Auction  is SemaphoreCore, Ownable{
+    
+    // users are identified by a Merkle root.
+    // The offchain Merkle tree contains the users' identity commitments.
+    uint256 public users;
+
    uint public auction_no = 0;
    mapping(uint256 => Auction) public auctions;
+
+   // The external verifier used to verify Semaphore proofs.
+    IVerifier public verifier;
+
+    constructor(uint256 _users, address _verifier) {
+        users = _users;
+        verifier = IVerifier(_verifier);
+    }
 
    struct Bid {
        uint price;
@@ -39,7 +57,10 @@ contract Auction {
         auction.active = false;
     }
 
-    function addBid(uint _index, uint _price, string memory _secret) public {
+    function addBid(uint _index, uint _price, string memory _secret, uint256 _nullifierHash,
+        uint256[8] calldata _proof) external onlyOwner {
+        _verifyProof( _secret, users, _nullifierHash, users, _proof, verifier);    
+         _saveNullifierHash(_nullifierHash);
         Auction storage auction = auctions[_index];
         auction.bids.push (Bid({
             price: _price,

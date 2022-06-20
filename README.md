@@ -7,6 +7,7 @@ ZKAuction is a zero knowledge based blind auction that keeps the privacy of the 
 
 ## Design
 
+-  Semaphore is uses as an authentication/privacy layer. So the Auction.sol contract is `SemaphoreCore`. Auctioneers and bidders first have to register their identity commitment to interact with the system.
 -  Auctioneer creates the auction and gives it a name and sets a deadline for bidders.
 -  This information are stored as a struct on chain.
 -  bidders go to the website and select the acution.

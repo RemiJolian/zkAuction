@@ -16,7 +16,7 @@ ZKAuction is a zero knowledge based blind auction that keeps the privacy of the 
 
 In this desing, there is no need for the auctioneer to generate the proof and run verification. 
 
-![](zkAuction1.png)
+![](zkAuction2.png)
 
 
 ## Smart contract

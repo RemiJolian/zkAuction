@@ -14,7 +14,7 @@
 
 ## Proposal Overview
 
-ZKAuction is a zero knowledge based blind auction that keeps the privacy of the bidders including their addresses and the bid amount. Each bidder deposits a small amount to encourage the bidder to come back and send multiple transactions/proofs. The information about each auction like name, expiration date will be stored on the blockchain. In this time range bidders are allowed to send transactions. Once the time is over, the winning bid as well as all other bids could be exposed.
+ZKAuction is a zero knowledge based blind auction that keeps the privacy of the bidders including their addresses and the bid amount. Each bidder deposits a small amount to encourage the bidder to come back and send multiple transactions/proofs. The information about each auction like name, expiration date will be stored on the blockchain. In this time range bidders are allowed to send bids. Once the time is over, the winning bid as well as all other bids could be exposed.
 
 ## Design
 
@@ -62,6 +62,8 @@ https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/auction.cir
 ## UI
 
 This system uses reactjs to interact with smart contract.
+
+Run `yarn dev` and then on browser go to [http://localhost:3000](http://localhost:3000) to access the frontend UI.
 
 ## TODO
 

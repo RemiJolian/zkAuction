@@ -18,14 +18,15 @@ ZKAuction is a zero knowledge based blind auction that keeps the privacy of the 
 
 ## Design
 
-- Semaphore is uses as an authentication/privacy layer. So the Auction.sol contract is `SemaphoreCore`. Auctioneers and bidders first have to register their identity commitment to interact with the system.
+- Semaphore is uses as an authentication/privacy layer. So the Auction.sol contract is `SemaphoreCore`.
+  - Auctioneers and bidders first have to register their identity commitment to interact with the system.
 - Auctioneer creates the auction and gives it a name and sets a deadline for bidders.
 - This information are stored as a struct on chain.
 - bidders go to the website and select the acution. - they cast their bid and the encrypted value and generated secret will be stored on chain.
 - by the end of deadline, the system retreives all the bidders info from chain
-- then, system uses auction circuit, generates the proof, and gives the highest bid
+- then, system uses auction circuit, generates the proof, and reveals the highest bid
 
-In this desing, there is no need for the auctioneer to generate the proof and run verification.
+In this desing, there is no need for the auctioneer to generate the proof and run verification. There is no centralized database.
 
 ![](zkAuction2.png)
 
@@ -56,8 +57,7 @@ Link to the `Auction.sol` contract [here](https://github.com/RemiJolian/zkAuctio
 
 ## Circuit
 
-Circuit for the BlindAuction:
-https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/auction.circom
+Circuits for this project are in the [circuit](https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/) folder.
 
 ## UI
 
@@ -67,5 +67,7 @@ Run `yarn dev` and then on browser go to [http://localhost:3000](http://localhos
 
 ## TODO
 
+- Improve the circuit
 - Encrypt the price in the Auction.sol
--
+- work on the UI
+- Deploy to Harmony Testnet

@@ -30,13 +30,13 @@ template HighestBid (n) {
         }
       }
       //valid bid = 1 else 0
-      validBid[i] <-- hashes[i].out == blindedBids[i];
+      validBid[i] <== hashes[i].out == blindedBids[i];
 
     }
     log(highestVal);
 
-  highestBid[0] <-- highestVal;
-  highestBid[1] <-- highestBid;
+  highestBid[0] <== highestVal;
+  highestBid[1] <== highestBid;
 
 }
 

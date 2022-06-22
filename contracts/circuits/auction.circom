@@ -6,7 +6,8 @@ template HighestBid (n) {
 
     signal input blindedBids[n];
 
-    signal input bids[n][2];
+    // secret, value, and address
+    signal input bids[n][3];
 
     signal output highestBid[2];
     signal output validBid[n];
@@ -16,9 +17,10 @@ template HighestBid (n) {
     var highestBid = 0;
     
     for (var i = 0; i < n; i++) {
-      hashes[i] = Poseidon(2);
+      hashes[i] = Poseidon(3);
       hashes[i].inputs[0] <== bids[i][0];
       hashes[i].inputs[1] <== bids[i][1];
+      hashes[i].inputs[2] <== bids[i][2];
 
       if (hashes[i].out == blindedBids[i]) {
 

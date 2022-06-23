@@ -9,7 +9,7 @@
 - [Project Structure](#project-structure)
   - [Smart contract](#smart-contract)
   - [Circuit](#circuit)
-  - [UI](#ui)
+  - [Front-end](#front-end)
   - [TODO](#todo)
 
 ## Proposal Overview
@@ -59,11 +59,17 @@ Link to the `Auction.sol` contract [here](https://github.com/RemiJolian/zkAuctio
 
 Circuits for this project are in the [circuit](https://github.com/RemiJolian/zkAuction/blob/main/contracts/circuits/) folder.
 
-## UI
-
-This system uses reactjs to interact with smart contract.
+## Front-end
 
 Run `yarn dev` and then on browser go to [http://localhost:3000](http://localhost:3000) to access the frontend UI.
+
+This system uses Nextjs to interact with smart contract. It uses Seamaphore contracts to verify Seamphore proofs. The following packages are needed:
+
+`yarn add @semaphore-protocol/identity @semaphore-protocol/group @semaphore-protocol/proof --dev`
+
+This project forked the following repository:
+
+- [Semaphore protocol boilerplate](https://github.com/semaphore-protocol/boilerplate)
 
 ## TODO
 
